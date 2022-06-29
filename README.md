@@ -8,11 +8,11 @@
 
 ### 사전 조건 (프로젝트에서 다루지 않는 부분)
 
-- VPC내에 GuardDuty를 활성화
+- VPC내에 GuardDuty를 활성화  
   [Getting started with GuardDuty](https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_settingup.html)
-- Ansible Controller Instance에는 SSM Agent, Ansible을 설치하고, 각 호스트에 대한 연결이 수립되어 있음
-  [Working with SSM Agent on EC2 instances for Linux](https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-install-ssm-agent.html)
-  [How to install Ansible on AWS EC2 Amazon Linux 2 instance](https://devcoops.com/install-ansible-on-aws-ec2-amazon-linux/)
+- Ansible Controller Instance에는 SSM Agent, Ansible을 설치하고, 각 호스트에 대한 연결이 수립되어 있음  
+  [Working with SSM Agent on EC2 instances for Linux](https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-install-ssm-agent.html)  
+  [How to install Ansible on AWS EC2 Amazon Linux 2 instance](https://devcoops.com/install-ansible-on-aws-ec2-amazon-linux/)  
   [Ansible Documentation](https://docs.ansible.com/)
 - NodeJS에 대한 코딩 지식
 - AWS EventBridge, Lambda의 동작 방식에 대한 이해
