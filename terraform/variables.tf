@@ -37,3 +37,5 @@ variable "service_name_lowercase" {
   description = "Service name lowercase"
   type        = string
 }
+
+variable "worker_ip" {}
