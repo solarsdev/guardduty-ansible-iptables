@@ -1,11 +1,20 @@
 {
   "name": "guardduty-ansible-iptables",
   "version": "1.0.0",
+  "description": "Blocking malicious target in OS level firewall (iptables) with terraform iac, ansible, AWS lambda automation. 💻",
+  "scripts": {
+    "prebuild": "rm -rf build",
+    "build": "babel guarddutyFindingsTrigger -d build/src/guarddutyFindingsTrigger"
+  },
   "author": "Sangkook Lee",
   "license": "MIT",
   "devDependencies": {
     "@babel/cli": "^7.18.6",
     "@babel/core": "^7.18.6",
     "@babel/preset-env": "^7.18.6"
+  },
+  "dependencies": {
+    "axios": "^0.27.2",
+    "dotenv": "^16.0.1"
   }
 }
