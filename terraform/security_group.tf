@@ -13,7 +13,7 @@ resource "aws_security_group" "ansible" {
     from_port   = 0
     to_port     = 0
     protocol    = -1
-    cidr_blocks = "${var.worker_ip}/32"
+    cidr_blocks = ["${var.worker_ip}/32"]
   }
 
   egress {
