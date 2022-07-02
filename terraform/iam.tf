@@ -61,7 +61,7 @@ data "aws_iam_policy_document" "sns-publish" {
       "sns:Publish"
     ]
     effect    = "Allow"
-    resources = [""] # arn: SNS
+    resources = ["*"] # arn: SNS
   }
 }
 
