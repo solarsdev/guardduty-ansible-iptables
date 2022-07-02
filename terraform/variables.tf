@@ -39,3 +39,4 @@ variable "service_name_lowercase" {
 }
 
 variable "worker_ip" {}
+variable "SLACK_WEBHOOK_URL" {}
