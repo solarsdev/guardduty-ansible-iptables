@@ -3,9 +3,11 @@
   "version": "1.0.0",
   "description": "Blocking malicious target in OS level firewall (iptables) with terraform iac, ansible, AWS lambda automation. 💻",
   "scripts": {
+    "build-notifyCommandResultToSlack": "babel notifyCommandResultToSlack -d build/src/notifyCommandResultToSlack",
+    "build-guardDutyFindingsTrigger": "babel guarddutyFindingsTrigger -d build/src/guarddutyFindingsTrigger",
     "build-layer": "mkdir -p build/layer/nodejs && cp -R node_modules build/layer/nodejs",
     "prebuild": "rm -rf build",
-    "build": "yarn run build-layer && babel guarddutyFindingsTrigger -d build/src/guarddutyFindingsTrigger"
+    "build": "yarn run build-notifyCommandResultToSlack && yarn run build-guardDutyFindingsTrigger && yarn run build-layer"
   },
   "author": "Sangkook Lee",
   "license": "MIT",
