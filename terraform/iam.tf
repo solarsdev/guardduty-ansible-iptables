@@ -10,6 +10,16 @@ data "aws_iam_policy" "AmazonS3FullAccess" {
   name = "AmazonS3FullAccess"
 }
 
+data "aws_iam_policy_document" "allows-lambda-to-passrole-to-sns-publish" {
+  statement {
+    actions = [
+      "iam:PassRole"
+    ]
+    effect    = "Allow"
+    resources = [aws_iam_role.sns-publish.arn]
+  }
+}
+
 resource "aws_iam_role" "lambda" {
   name = "${var.service_name_lowercase}.lambda.iam"
 
@@ -26,6 +36,11 @@ resource "aws_iam_role" "lambda" {
       },
     ]
   })
+
+  inline_policy {
+    name   = "allows-lambda-to-passrole-to-sns-publish"
+    policy = data.aws_iam_policy_document.allows-lambda-to-passrole-to-sns-publish.json
+  }
 
   managed_policy_arns = [data.aws_iam_policy.AWSLambdaBasicExecutionRole.arn, data.aws_iam_policy.AmazonS3FullAccess.arn]
 }
